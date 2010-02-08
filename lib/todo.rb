@@ -74,7 +74,7 @@ class Todo
 
   def self.find_tags(line)
     line.
-      scan(/#\w+/). # Hash words
+      scan(/#[\w\-_]+/). # Hash words
       collect {|w| w.sub(/#/,'').downcase }. # Remove hash (#)
       uniq
   end
